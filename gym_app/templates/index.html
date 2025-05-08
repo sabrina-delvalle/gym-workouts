@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block content %}
+    <h1>Index</h1>
+    <p>Register here <a href="{% url "user:register" %}">Register</a> </p>
+{% endblock %}

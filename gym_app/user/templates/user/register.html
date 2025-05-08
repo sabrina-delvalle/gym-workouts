@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block title %}
+    Register a New User
+{% endblock %}
+
+{% block content %}
+    <section class='register-section'>
+        <h1 class="section-title">Register a New User</h1>
+        <form class='register-view' action="{% url 'user:register' %}" method="post">
+            {% csrf_token %}
+            {% comment %} {{ form.as_p }} {% endcomment %}
+            {% for field in form %}
+                <div class="center-register">
+                    <label class='holder-title' for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {% render_field field class+="holder-pos" %}
+                    {% if field.help_text %}
+                        <small class="form-text text-muted">{{ field.help_text }}</small>
+                    {% endif %}
+                    {% for error in field.errors %}
+                        <div class="alert alert-danger">{{ error }}</div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+            <button type='submit' class="submit-button">Submit</button>
+        </form>
+    </section>
+{% endblock %} 
