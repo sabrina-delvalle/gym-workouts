@@ -1,0 +1,79 @@
+* {
+    background-color: whitesmoke;
+    color: dimgray;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.gym-banner {
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    height: 250px;
+    max-width: 1000px;
+}
+
+.register-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.register-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3px;
+    gap: 6px;
+    width: 100%;
+}
+
+.submit-button {
+    display: block;
+    width: 10%;
+    margin-top: 1%;
+    background-color: rgb(6, 100, 100);
+    color: aliceblue;
+    height: 50px;
+    font-size: x-large;
+    font-weight: 100;
+    border: none;
+    border-radius: 5px;
+}
+
+.holder-pos {
+    display: flex;
+    border-radius: 3px;
+    border-width: 1px;
+    margin-left: .5%;
+    margin-bottom: .35%;
+    margin-top: .30%;
+    height: 25px;
+    width: 250px;
+    color: black;
+    padding: .75% 10px;
+    background-color: rgb(223, 223, 223);
+}
+
+.center-register {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    font-size: 30px;
+    background-color: rgb(39, 39, 39);
+    width: 100%;
+    color: aliceblue;
+}
+
+.holder-title {
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 100;
+    color: rgb(6, 100, 100);
+}

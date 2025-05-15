@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            Gym App
+        {% endblock %}
+    </title>
+    {% comment %} <link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'dist/styles.css' %}">
+    <script src="{% static 'js/main.js' %}" defer></script>
+    <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+</head>
+<body>
+    <nav class="flex flex-row h-24 items-center">
+        <a href="/" class="w-1/4 font-extrabold pl-24 text-4xl">Gym Workouts.</a>
+        <ul class="flex flex-row-reverse w-3/4 pr-24">
+            <li class='font-light'><a href="user/register/">Register</a></li>
+            <li class="px-2 font-extrabold">/</li>
+            <li class="font-light"><a href={% url 'index'%}>Login</a></li>
+        </ul>
+    </nav>
+    <nav>
+        {% comment %} <a href="/user/register">
+            <span role="img" aria-label="Home" title="register">🚀</span>
+        </a>  {% endcomment %}
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer class="bg-stone-600 h-[450px] w-full mt-10 rounded-t-4xl">
+
+    <section class="flex flex-row justify-center items-center h-full">
+        <ul class="text-white font-light text-[12px] flex flex-col items-center">
+            <li class="pb-10 font-bold">Company</li> 
+            <li>About Us</li>
+            <li>Leadership</li>
+            <li>Careers</li>
+            <li>Investors</li>
+            <li>Press</li>
+            <li>Partners</li>
+            <li>Sustainability</li>
+            <li>Newsroom</li>
+        </ul>
+        
+        <ul class="text-white font-light text-[12px] flex flex-col items-center ml-20 mr-10">
+            <li class="pb-10 font-bold">Sector</li> 
+            <li>Banking</li>
+            <li>Fintech</li>
+            <li>Private Equity</li>
+            <li>Venture Capital</li>
+            <li>Insurance</li>
+            <li>Asset Management</li>
+            <li>Real Estate</li>
+            <li>Commodities</li>
+        </ul>
+        
+        <ul class="text-white font-light text-[12px] flex flex-col items-center mr-20 ml-10">
+            <li class="pb-10 font-bold">Services</li> 
+            <li>M&A Advisory</li>
+            <li>Risk Management</li>
+            <li>Wealth Management</li>
+            <li>Financial Consulting</li>
+            <li>Market Analysis</li>
+            <li>Regulatory Compliance</li>
+            <li>Blockchain Solutions</li>
+            <li>AI in Finance</li>
+        </ul>
+        
+        <ul class="text-white font-light text-[12px] flex flex-col items-center">
+            <li class="pb-10 font-bold">Contact</li> 
+            <li>Global Offices</li>
+            <li>Client Support</li>
+            <li>Media Inquiries</li>
+            <li>Careers</li>
+            <li>Investor Relations</li>
+            <li>Email Us</li>
+            <li>LinkedIn</li>
+            <li>Twitter</li>
+        </ul>
+    </section>
+
+    </footer>
+</body>
+</html>

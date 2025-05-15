@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block title %}
+    Register a New User
+{% endblock %}
+
+{% block content %}
+    <section>
+        <h1 class="text-amber-700">Register a New User</h1>
+        <form class='' action="{% url 'user:register' %}" method="post">
+            {% csrf_token %}
+            {% comment %} {{ form.as_p }} {% endcomment %}
+            {% for field in form %}
+                <div>
+                    {% comment %} <label class='holder-title' for="{{ field.id_for_label }}">{{ field.label }}</label> {% endcomment %}
+                    {% render_field field class+="" placeholder=field.label%}
+                    {% if field.help_text %}
+                        <small class="">{{ field.help_text }}</small>
+                    {% endif %}
+                    {% for error in field.errors %}
+                        <div class="">{{ error }}</div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+            <button type='submit' class="">Submit</button>
+        </form>
+    </section>
+{% endblock %} 
