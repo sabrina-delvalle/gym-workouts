@@ -3,40 +3,58 @@
 {% load static %}
 
 {% block title %}
-    Register a New User
+    Login
 {% endblock %}
 
 {% block content %}
     <section class="flex flex-row justify-center gap-x-32 my-20 mb-32">
         <section class="flex flex-col items-center">
             <h1 class="font-light text-6xl text-pink-500 py-12">Login</h1>
-            <form class='flex flex-col items-center' action="{% url 'user:register' %}" method="post">
-                {% csrf_token %}
-                <div>
-                    <label for="username" class="block text-xl mb-2"></label>
-                    <input type="text" id="username" required 
-                        class="border-[1px] border-gray-500 mt-2 h-10 p-2 rounded-xl focus:outline focus:outline-pink-500 focus:invalid:border-pink-500 hover:opacity-80" placeholder="username">
+            {% if messages %}
+                <div class="mb-4 text-red-500 text-sm">
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
                 </div>
-                <div>
-                    <label for="username" class="block text-xl mb-2"></label>
-                    <input type="password" id="username" required 
-                        class="border-[1px] border-gray-500 mt-2 h-10 p-2 rounded-xl focus:outline focus:outline-pink-500 focus:invalid:border-pink-500 hover:opacity-80" placeholder="password">
+            {% endif %}
+            <form class="flex flex-col items-center" action="{% url 'user:login' %}" method="post">
+                {% csrf_token %}
+                
+                <!-- Username Field -->
+                <div class="mb-4 w-full">
+                    <label for="username" class="block text-sm font-medium text-gray-700 mb-1"></label>
+                    <input
+                        type="text"
+                        name="username"
+                        id="username"
+                        class="w-full border border-gray-500 rounded-xl p-2 h-10 focus:outline-none focus:ring-2 focus:ring-pink-500 hover:opacity-80 focus:invalid:border-pink-500"
+                        placeholder="username"
+                        required
+                        autocomplete="username"
+                    >
                 </div>
 
-                {% comment %} {{ form.as_p }} {% endcomment %}
-                {% for field in form %}
-                    <div>
-                        {% comment %} <label class='holder-title' for="{{ field.id_for_label }}">{{ field.label }}</label> {% endcomment %}
-                        {% render_field field class+="border border-[1px] border-gray-500 mt-2 h-10 p-2 rounded-xl focus:outline focus:outline-pink-500 focus:invalid:border-pink-500 hover:opacity-80" placeholder=field.label%}
-                        {% if field.help_text %}
-                            <small class="">{{ field.help_text }}</small>
-                        {% endif %}
-                        {% for error in field.errors %}
-                            <div class="">{{ error }}</div>
-                        {% endfor %}
-                    </div>
-                {% endfor %}
-                <button type='submit' class="bg-pink-500 rounded-full font-light px-2 py-3 w-24 my-10 text-white hover:text-neutral-700 hover:cursor-pointer">Login</button>
+                <!-- Password Field -->
+                <div class="mb-6 w-full">
+                    <label for="password" class="block text-sm font-medium text-gray-700 mb-1"></label>
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        class="w-full border border-gray-500 rounded-xl p-2 h-10 focus:outline-none focus:ring-2 focus:ring-pink-500 hover:opacity-80 focus:invalid:border-pink-500"
+                        placeholder="password"
+                        required
+                        autocomplete="current-password"
+                    >
+                </div>
+
+                <!-- Submit Button -->
+                <button
+                    type="submit"
+                    class="bg-pink-500 rounded-full font-light px-6 py-3 w-5/12 my-2 text-white hover:bg-pink-600 transition-colors hover:cursor-pointer"
+                >
+                    Login
+                </button>
             </form>
         </section>
                 <section class="flex flex-col items-center justify-center">
