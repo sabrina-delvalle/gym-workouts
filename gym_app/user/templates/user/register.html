@@ -17,11 +17,11 @@
                     <div>
                         {% comment %} <label class='holder-title' for="{{ field.id_for_label }}">{{ field.label }}</label> {% endcomment %}
                         {% render_field field class+="border border-[1px] border-gray-500 mt-2 h-10 p-2 rounded-xl focus:outline focus:outline-pink-500 focus:invalid:border-pink-500 hover:opacity-80" placeholder=field.label%}
-                        {% if field.help_text %}
+                        {% comment %} {% if field.help_text %}
                             <small class="">{{ field.help_text }}</small>
-                        {% endif %}
+                        {% endif %} {% endcomment %}
                         {% for error in field.errors %}
-                            <div class="">{{ error }}</div>
+                                <div class="font-light text-pink-400 my-2 w-full"><p class="text-pink-500">{{ error }}</p></div>
                         {% endfor %}
                     </div>
                 {% endfor %}

@@ -1,18 +1,24 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-# from django.contrib.auth.models import User
 
+class User(AbstractUser):
+    # Remove these fields since they're already in AbstractUser:
+    # first_name (inherited)
+    # username (inherited)
+    # email (inherited)
+    # password (inherited - properly hashed)
 
-class User(models.Model):
-    first_name = models.CharField(max_length=55)
-    username = models.CharField(max_length=55)
-    email = models.EmailField(max_length=255)
-    GENDERS_ = (("option1", "male"), ("option2", "female"), ("option3", "other"))
-    gender = models.CharField(max_length=10, choices=GENDERS_)
-    password = models.CharField(max_length=155)
+    GENDERS = (
+        ("male", "Male"),
+        ("female", "Female"),
+        ("other", "Other"),
+    )
+    gender = models.CharField(max_length=10, choices=GENDERS)
     gym_place = models.CharField(max_length=255)
     pic = models.ImageField(default="user-profile.png", blank=True)
     selection = models.JSONField(default=dict)
 
+    # Add any custom methods you need
     def __str__(self):
-        return self.first_name
+        return self.get_full_name() or self.username

@@ -46,6 +46,8 @@ INSTALLED_APPS = [
 # TAILWIND_APP_NAME = "theme"
 # INTERNAL_IPS = ["127.0.0.1"]
 
+AUTH_USER_MODEL = "user.User"  # Replace 'your_app' with your actual app name
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -89,6 +91,7 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
+# flake8: noqa: E501
 
 AUTH_PASSWORD_VALIDATORS = [
     {
