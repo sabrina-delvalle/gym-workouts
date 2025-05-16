@@ -15,12 +15,26 @@
     <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
 </head>
 <body>
-    <nav class="flex flex-row h-24 items-center">
-        <a href="/" class="w-1/4 font-extrabold pl-24 text-4xl">Gym Workouts.</a>
-        <ul class="flex flex-row-reverse w-3/4 pr-24">
-            <li class='font-light'><a href="user/register/">Register</a></li>
+    <section class="flex flex-row h-9 items-center justify-center w-full gap-68 bg-pink-500 text-white">
+        <a href="/" class="text-md font-light hover:text-neutral-800">call us: +414-4668041</a>
+        <a href="/" class="text-md font-light hover:text-neutral-800">offer: 40% discount TODAY!</a>
+        <a href="/" class="text-md font-light hover:text-neutral-800">Get In Shape</a>
+    </section>
+    <nav class="flex flex-row h-32 items-center justify-center w-full gap-68 bg-neutral-800 text-white">
+        <a href="/" class="font-extrabold text-4xl">Gym Workouts.</a>
+        
+        <ul class="grid grid-cols-4 items-center justify-items-center gap-x-12">
+            <li class="font-light text-xl hover:text-pink-500"><a href="/">Home</a></li>
+            <li class="font-light text-xl hover:text-pink-500"><a href="/">Products</a></li>
+            <li class="font-light text-xl hover:text-pink-500"><a href="/">Calculator</a></li>
+            <li class="font-light text-xl hover:text-pink-500"><a href="/">About</a></li>
+        </ul>
+
+        <ul class="flex flex-row-reverse items-center">
+            <li class='bg-pink-500 px-3 py-2 rounded-full font-light hover:text-neutral-800'><a href={% url 'user:register'%} >Register</a></li>
+                {% comment %} href="user/register/ {% endcomment %}
             <li class="px-2 font-extrabold">/</li>
-            <li class="font-light"><a href={% url 'index'%}>Login</a></li>
+            <li class="font-light hover:text-pink-500"><a href={% url 'user:login'%}>Login</a></li>
         </ul>
     </nav>
     <nav>
@@ -34,14 +48,11 @@
     </main>
     <footer class="bg-stone-600 h-[450px] w-full mt-10 rounded-t-4xl">
 
-    <section class="flex flex-row justify-center items-center h-full">
+    <section class="flex flex-row justify-center pt-34 h-full">
         <ul class="text-white font-light text-[12px] flex flex-col items-center">
             <li class="pb-10 font-bold">Company</li> 
             <li>About Us</li>
-            <li>Leadership</li>
-            <li>Careers</li>
             <li>Investors</li>
-            <li>Press</li>
             <li>Partners</li>
             <li>Sustainability</li>
             <li>Newsroom</li>
@@ -66,7 +77,6 @@
             <li>Wealth Management</li>
             <li>Financial Consulting</li>
             <li>Market Analysis</li>
-            <li>Regulatory Compliance</li>
             <li>Blockchain Solutions</li>
             <li>AI in Finance</li>
         </ul>
@@ -75,8 +85,6 @@
             <li class="pb-10 font-bold">Contact</li> 
             <li>Global Offices</li>
             <li>Client Support</li>
-            <li>Media Inquiries</li>
-            <li>Careers</li>
             <li>Investor Relations</li>
             <li>Email Us</li>
             <li>LinkedIn</li>

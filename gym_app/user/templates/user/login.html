@@ -9,9 +9,20 @@
 {% block content %}
     <section class="flex flex-row justify-center gap-x-32 my-20 mb-32">
         <section class="flex flex-col items-center">
-            <h1 class="font-light text-6xl text-pink-500 py-12">Register</h1>
-            <form class='flex flex-col' action="{% url 'user:register' %}" method="post">
+            <h1 class="font-light text-6xl text-pink-500 py-12">Login</h1>
+            <form class='flex flex-col items-center' action="{% url 'user:register' %}" method="post">
                 {% csrf_token %}
+                <div>
+                    <label for="username" class="block text-xl mb-2"></label>
+                    <input type="text" id="username" required 
+                        class="border-[1px] border-gray-500 mt-2 h-10 p-2 rounded-xl focus:outline focus:outline-pink-500 focus:invalid:border-pink-500 hover:opacity-80" placeholder="username">
+                </div>
+                <div>
+                    <label for="username" class="block text-xl mb-2"></label>
+                    <input type="password" id="username" required 
+                        class="border-[1px] border-gray-500 mt-2 h-10 p-2 rounded-xl focus:outline focus:outline-pink-500 focus:invalid:border-pink-500 hover:opacity-80" placeholder="password">
+                </div>
+
                 {% comment %} {{ form.as_p }} {% endcomment %}
                 {% for field in form %}
                     <div>
@@ -25,11 +36,11 @@
                         {% endfor %}
                     </div>
                 {% endfor %}
-                <button type='submit' class="bg-pink-500 rounded-full font-light px-3 py-4 my-10 text-white hover:text-neutral-700 hover:cursor-pointer">Submit</button>
+                <button type='submit' class="bg-pink-500 rounded-full font-light px-2 py-3 w-24 my-10 text-white hover:text-neutral-700 hover:cursor-pointer">Login</button>
             </form>
         </section>
-        <section class="flex flex-col items-center justify-center">
-            <h1 class="font-light text-6xl text-pink-500 py-8">Link Your Account</h1>
+                <section class="flex flex-col items-center justify-center">
+            <h1 class="font-light text-5xl text-pink-500 py-8">Direct Access</h1>
             <h1 class="font-light text-xl text-neutral-500 pb-8"> ───── </h1>
             <ul class="flex justify-center items-center gap-3">
                 <li><a href="/"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="55" height="55" viewBox="0,0,256,256" class='bg-sky-400 rounded-[12px] p-1 hover:opacity-80'>

@@ -19,3 +19,18 @@ def register(request):
     else:
         form = forms.CreateUser()
     return render(request, "user/register.html", {"form": form})
+
+def login(request):
+    #if request.method == "POST":
+    #     print("Form submitted!")
+    #     form = forms.CreateUser(request.POST)
+    #     if form.is_valid():
+    #         print("Form is valid!")  # Check if validation passes
+    #         form.save()
+    #         print("User created: ")  # Verify creation
+    #         return redirect("index")
+    #     else:
+    #         print("Form errors:", form.errors)  # Log validation errors
+    # else:
+    #     form = forms.CreateUser()
+    return render(request, "user/login.html")

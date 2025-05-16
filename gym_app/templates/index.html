@@ -7,8 +7,103 @@
 
 {% block content %}
     <section class="flex flex-col items-center">
-        <a href="/" class="bg-red-400 h-[550px] w-11/12 text-white flex flex-row justify-center items-center text-5xl rounded-4xl my-10"> SECTION OF <h1 class="font-extrabold pl-10 text-8xl">WORKOUTS.</h1></a>
-        <a href="/" class="bg-pink-400 h-[550px] w-11/12 text-white flex flex-row justify-center items-center text-5xl rounded-4xl my-10"> SECTION OF <h1 class="font-extrabold pl-10 text-8xl">CALCULATOR.</h1> </a>
-        <a href="/" class="bg-cyan-400 h-[550px] w-11/12 text-white flex flex-row justify-center items-center text-5xl rounded-4xl my-10"> SECTION OF <h1 class="font-extrabold pl-10 text-8xl">FOOD.</h1></a>
+        <ul class="flex flex-col justify-center items-center">
+            <li class="grid grid-cols-2 place-items-center">
+                <img class="fitness-index" src="{% static 'media/fitness_index.png' %}" alt="Fitness Index">
+                <a href="/" class="h-[550px] w-11/12 text-neutral-700 flex flex-row justify-center items-center text-5xl rounded-4xl my-10"><h1 class="font-extrabold pl-10 text-8xl">Aliado de tu rutina de <p class="text-pink-500">GYM!</p></h1></a>
+            </li>
+
+            <li class="bg-pink-400 h-[550px] w-11/12 text-white flex flex-col justify-center items-center text-5xl rounded-4xl my-10">
+                <div class="text-7xl font-bold mb-8" id="timer">00:00</div>
+                <div class="flex gap-4">
+                    <button class="bg-white text-pink-600 px-6 py-3 rounded-full text-2xl font-semibold hover:bg-gray-100 transition" id="startBtn">Start</button>
+                    <button class="bg-white text-pink-600 px-6 py-3 rounded-full text-2xl font-semibold hover:bg-gray-100 transition" id="pauseBtn">Pause</button>
+                    <button class="bg-white text-pink-600 px-6 py-3 rounded-full text-2xl font-semibold hover:bg-gray-100 transition" id="resetBtn">Reset</button>
+                </div>
+                <div class="mt-8 text-2xl">
+                    <label for="minutes" class="mr-2">Set Timer:</label>
+                    <input type="number" id="minutes" min="1" max="60" value="5" class="w-16 text-center text-black rounded">
+                    <span class="ml-2">minutes</span>
+                </div>
+            </li>
+            <li class="bg-cyan-400 h-screen w-11/12 text-neutral-600 flex flex-col items-center rounded-4xl my-10 py-12 overflow-y-auto ">
+                <h2 class="text-5xl font-bold mb-8">WORKOUT TRACKER</h2>
+                
+                <div class="w-full max-w-4xl space-y-8">
+                    <!-- Workout Table 1 -->
+                    <div class="bg-white bg-opacity-20 p-6 rounded-3xl">
+                        <h3 class="text-3xl font-semibold mb-4">Upper Body</h3>
+                        <table class="w-full text-2xl">
+                            <thead>
+                                <tr class="border-b-2 border-white border-opacity-30">
+                                    <th class="text-left pb-2">Exercise</th>
+                                    <th class="text-center">Sets</th>
+                                    <th class="text-center">Reps</th>
+                                    <th class="text-center">Weight</th>
+                                    <th class="text-center">Done</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-white border-opacity-20">
+                                    <td class="py-3">Bench Press</td>
+                                    <td class="text-center"><input type="number" min="1" max="10" value="3" class="w-16 text-center bg-transparent border rounded"></td>
+                                    <td class="text-center"><input type="number" min="1" max="50" value="10" class="w-16 text-center bg-transparent border rounded"></td>
+                                    <td class="text-center"><input type="number" min="0" max="500" value="135" class="w-20 text-center bg-transparent border rounded"> lbs</td>
+                                    <td class="text-center"><input type="checkbox" class="w-6 h-6"></td>
+                                </tr>
+                                <tr class="border-b border-white border-opacity-20">
+                                    <td class="py-3">Shoulder Press</td>
+                                    <td class="text-center"><input type="number" min="1" max="10" value="3" class="w-16 text-center bg-transparent border rounded"></td>
+                                    <td class="text-center"><input type="number" min="1" max="50" value="12" class="w-16 text-center bg-transparent border rounded"></td>
+                                    <td class="text-center"><input type="number" min="0" max="500" value="75" class="w-20 text-center bg-transparent border rounded"> lbs</td>
+                                    <td class="text-center"><input type="checkbox" class="w-6 h-6"></td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3">Pull Ups</td>
+                                    <td class="text-center"><input type="number" min="1" max="10" value="3" class="w-16 text-center bg-transparent border rounded"></td>
+                                    <td class="text-center"><input type="number" min="1" max="50" value="8" class="w-16 text-center bg-transparent border rounded"></td>
+                                    <td class="text-center"><span class="opacity-70">Bodyweight</span></td>
+                                    <td class="text-center"><input type="checkbox" class="w-6 h-6"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="mt-4 bg-white text-cyan-600 px-4 py-2 rounded-full text-xl">Add Exercise +</button>
+                    </div>
+
+                    <!-- Workout Table 2 -->
+                    <div class="bg-white bg-opacity-20 p-6 rounded-3xl">
+                        <h3 class="text-3xl font-semibold mb-4">Lower Body</h3>
+                        <table class="w-full text-2xl">
+                            <thead>
+                                <tr class="border-b-2 border-white border-opacity-30">
+                                    <th class="text-left pb-2">Exercise</th>
+                                    <th class="text-center">Sets</th>
+                                    <th class="text-center">Reps</th>
+                                    <th class="text-center">Weight</th>
+                                    <th class="text-center">Done</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-white border-opacity-20">
+                                    <td class="py-3">Squats</td>
+                                    <td class="text-center"><input type="number" min="1" max="10" value="4" class="w-16 text-center bg-transparent border rounded"></td>
+                                    <td class="text-center"><input type="number" min="1" max="50" value="8" class="w-16 text-center bg-transparent border rounded"></td>
+                                    <td class="text-center"><input type="number" min="0" max="500" value="185" class="w-20 text-center bg-transparent border rounded"> lbs</td>
+                                    <td class="text-center"><input type="checkbox" class="w-6 h-6"></td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3">Deadlifts</td>
+                                    <td class="text-center"><input type="number" min="1" max="10" value="3" class="w-16 text-center bg-transparent border rounded"></td>
+                                    <td class="text-center"><input type="number" min="1" max="50" value="5" class="w-16 text-center bg-transparent border rounded"></td>
+                                    <td class="text-center"><input type="number" min="0" max="500" value="225" class="w-20 text-center bg-transparent border rounded"> lbs</td>
+                                    <td class="text-center"><input type="checkbox" class="w-6 h-6"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="mt-4 bg-white text-cyan-600 px-4 py-2 rounded-full text-xl">Add Exercise +</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
     </section>
 {% endblock %}
