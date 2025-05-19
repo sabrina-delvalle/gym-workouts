@@ -1,0 +1,35 @@
+[33mcommit 6f2a61df50ec3bc7605e6e510002e9a3b3eb6c46[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Sabrina Del Valle <is.sabrinadelvalle@gmail.com>
+Date:   Sun May 18 21:36:26 2025 -0400
+
+    Basic User Access 2.1
+
+[33mcommit 8853e57f7692c2e39a0934278441de7488916813[m
+Author: Sabrina Del Valle <is.sabrinadelvalle@gmail.com>
+Date:   Sun May 18 21:27:17 2025 -0400
+
+    Basic User Access 2.0
+
+[33mcommit d2df7dacb53c30cedc1c82d99439e621b01a3530[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Sabrina Del Valle <is.sabrinadelvalle@gmail.com>
+Date:   Fri May 16 17:29:19 2025 -0400
+
+    Migration Test: Register-Login - User
+
+[33mcommit 393d3a37041c166de25449e559d9e806bcaf0560[m
+Author: Sabrina Del Valle <is.sabrinadelvalle@gmail.com>
+Date:   Fri May 16 16:41:55 2025 -0400
+
+    Previous Using Native Login
+
+[33mcommit 7f09a306280b630e1338074b56c91941fe50cf88[m
+Author: Sabrina Del Valle <is.sabrinadelvalle@gmail.com>
+Date:   Thu May 15 20:00:05 2025 -0400
+
+    Basic Layout: Index, Login, Register
+
+[33mcommit e339474167f79b250795eaae69e9f1643c739dd0[m
+Author: Sabrina Del Valle <is.sabrinadelvalle@gmail.com>
+Date:   Thu May 15 10:43:08 2025 -0400
+
+    Basic Index Page

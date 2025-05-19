@@ -10,12 +10,16 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+from dotenv import load_dotenv
 from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+load_dotenv()
+# SECRET_KEY = os.getenv("SECRET_KEY")
+# DEBUG = os.getenv("DEBUG") == "True"  # Convert string to boolean
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -41,6 +45,11 @@ INSTALLED_APPS = [
     "user",
     "schedule",
     "widget_tweaks",
+    "django.contrib.sites",  # Add this line
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.google",
     # "compressor",
 ]
 # TAILWIND_APP_NAME = "theme"
@@ -56,6 +65,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = "gym_app.urls"
@@ -128,9 +138,55 @@ STATIC_URL = "static/"
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR / "static")]
 
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+]
+
+SITE_ID = 1  # Make sure to set the correct site ID
+
+# Optional settings ##############################3
+# ACCOUNT_EMAIL_REQUIRED = True
+# ACCOUNT_USERNAME_REQUIRED = False
+# ACCOUNT_AUTHENTICATION_METHOD = 'email'
+# ACCOUNT_EMAIL_VERIFICATION = 'optional'
+
+SOCIALACCOUNT_PROVIDERS = {
+    "google": {
+        "SCOPE": [
+            "profile",
+            "email",
+        ],
+        "AUTH_PARAMS": {
+            "access_type": "online",
+        },
+        "APP": {
+            "client_id": os.getenv("GOOGLE_CLIENT_ID"),
+            "secret": os.getenv("GOOGLE_SECRET"),
+            "key": "",
+        },
+    }
+}
+
+SOCIALACCOUNT_ADAPTER = "user.adapters.CustomSocialAccountAdapter"
+
+# Allows Google logins to create new accounts
+SOCIALACCOUNT_AUTO_SIGNUP = True
+
+# Don't force users to fill extra forms
+SOCIALACCOUNT_FORMS = {}
+
+# LOGIN_REDIRECT_URL = "/"  # Redirect to home after login
+# LOGOUT_REDIRECT_URL = "/"  # Redirect to home after logout
+
 # COMPRESS_ROOT = BASE_DIR / "static"
 # COMPRESS_ENABLED = True
 # STATICFILES_FINDERS = "compressor.finders.CompressorFinder"
+
+LOGIN_REDIRECT_URL = "/"  # Where to go after successful login
+SOCIALACCOUNT_AUTO_SIGNUP = True  # Skip additional signup form if possible
+ACCOUNT_SIGNUP_REDIRECT_URL = "/"  # After social signup
+ACCOUNT_LOGOUT_REDIRECT_URL = "/"  # Redirect to home after logout
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

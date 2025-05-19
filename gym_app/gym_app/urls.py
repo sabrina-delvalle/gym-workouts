@@ -23,4 +23,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.homepage, name="index"),
     path("user/", include("user.urls"), name="user"),
+    path("accounts/", include("allauth.urls")),
+    # path("accounts/", include("user.urls")),  # Include your app's URLs
 ]

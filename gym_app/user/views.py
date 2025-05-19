@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from .models import User
 from django.contrib.auth import authenticate, login  # UserCreationForm
 from django.contrib import messages  # logout
@@ -22,6 +23,22 @@ def register(request):
     else:
         form = forms.CreateUser()
     return render(request, "user/register.html", {"form": form})
+
+
+@login_required
+def profile(request):
+    # Check if this is a social account
+    social_account = (
+        request.user.socialaccount_set.first()
+        if hasattr(request.user, "socialaccount_set")
+        else None
+    )
+
+    return render(
+        request,
+        "accounts/profile.html",
+        {"user": request.user, "social_account": social_account},
+    )
 
 
 def login_view(request):

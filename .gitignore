@@ -8,4 +8,4 @@ __pycache__/
 # Other common exclusions
 .env
 *.sqlite3
-gym_app/db.sqlite3
+gym_app/db.sqlite3.env

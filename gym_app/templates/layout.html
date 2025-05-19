@@ -34,6 +34,8 @@
             <li class='bg-pink-500 px-3 py-2 rounded-full font-light hover:text-neutral-800'><a href={% url 'user:register'%} >Register</a></li>
                 {% comment %} href="user/register/ {% endcomment %}
             <li class="px-2 font-extrabold">/</li>
+            <li class="font-light hover:text-pink-500"><a href="{% url 'account_logout' %}">Logout</a></li>
+            <li class="px-2 font-extrabold">/</li>
             <li class="font-light hover:text-pink-500"><a href={% url 'user:login'%}>Login</a></li>
         </ul>
     </nav>

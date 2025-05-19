@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Profile</h1>
+<p>Welcome, {{ user.username }}!</p>
+
+{% if social_account %}
+<div class="social-info">
+    <p>Connected via {{ social_account.provider|title }}</p>
+    <img src="{{ social_account.get_avatar_url }}" alt="Profile photo">
+</div>
+{% endif %}
+
+<!-- Add more profile info here -->
+{% endblock %}
