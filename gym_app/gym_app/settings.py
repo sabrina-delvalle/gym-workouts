@@ -172,7 +172,8 @@ SOCIALACCOUNT_ADAPTER = "user.adapters.CustomSocialAccountAdapter"
 
 # Allows Google logins to create new accounts
 SOCIALACCOUNT_AUTO_SIGNUP = True
-
+SOCIALACCOUNT_STORE_PROFILE_PICTURES = True  # Default is True
+SOCIALACCOUNT_PROFILE_PICTURES_DIR = "profile_pics/"  # Custom directory
 # Don't force users to fill extra forms
 SOCIALACCOUNT_FORMS = {}
 

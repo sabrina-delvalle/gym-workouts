@@ -36,7 +36,7 @@ def profile(request):
 
     return render(
         request,
-        "accounts/profile.html",
+        "user/profile.html",
         {"user": request.user, "social_account": social_account},
     )
 
