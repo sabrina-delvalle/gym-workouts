@@ -7,101 +7,430 @@
 {% endblock %}
 
 {% block content %}
-    <section class="flex flex-row justify-center gap-x-32 my-20 mb-32">
-        <section class="flex flex-col items-center">
-            <h1 class="font-extralight text-6xl text-pink-500 py-2">Profile</h1>
-            <div class="font-extralight text-3xl text-neutral-500 py-14">
-                Monday
-
-                    <!-- Selected Options Container -->
-                    <div id="selected-options" class="my-4 min-h-10 border-2 border-dashed border-gray-200 rounded-lg p-4">
-                        <!-- Selected options will appear here -->
-                    </div>
-
-                    <div class="p-10">
-                        <!-- Dropdown Container -->
-                        <div class="relative inline-block text-left self-center">
-                            <!-- Dropdown Button -->
-                            <button id="dropdown-button" class="flex justify-center items-center text-pink-500 w-32 h-16 rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-light hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                                Agregar
-                                <!-- Dropdown Icon -->
-                                <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
-                            </button>
-
-                            <!-- Dropdown Menu (Hidden by default) -->
-                            <div id="dropdown-menu" class="hidden origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
-                                <div class="py-1" role="none">
-                                    <a href="#" class="dropdown-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Home</a>
-                                    <a href="#" class="dropdown-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">About</a>
-                                    <a href="#" class="dropdown-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Services</a>
-                                    <a href="#" class="dropdown-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Contact</a>
+<section class="flex flex-col items-center justify-center">
+    <h1 class="font-extralight text-6xl text-pink-500 py-14">Tu Rutina Diaria</h1>
+    <p class="font-extralight text-lg text-neutral-800 py-5">Lista de ejercicios por día, puedes agregar y ajustar según tus necesidades:</p>
+    <section class="grid grid-cols-3 gap-x-14 mb-14">
+                <div class="font-extralight text-3xl text-neutral-500 py-14">
+                    Lunes
+    
+                        <!-- Selected Options Container -->
+                        <div id="selected-options-lunes" class="my-4 min-h-10 border border-dashed border-pink-500 rounded-lg p-4 py-4 gap-3 text-2xl">
+                            <!-- Selected options will appear here -->List:
+                        </div>
+    
+                        <div class="p-10">
+                            <!-- Dropdown Container -->
+                            <div class="relative inline-block text-left self-center">
+                                <!-- Dropdown Button -->
+                                <button id="dropdown-button-lunes" class="flex justify-center items-center text-pink-500 w-32 h-16 rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-light hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                    Agregar
+                                    <!-- Dropdown Icon -->
+                                    <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+    
+                                <!-- Dropdown Menu (Hidden by default) -->
+                                <div id="dropdown-menu-lunes" class="hidden origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
+                                    <div class="py-1 max-h-60 overflow-y-auto" role="none">
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Squats</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Deadlifts</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Bench Press</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Pull-ups</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Push-ups</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Lunges</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Shoulder Press</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Bicep Curls</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Tricep Dips</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Lat Pulldowns</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Leg Press</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Calf Raises</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Plank</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Russian Twists</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Burpees</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Jumping Jacks</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Mountain Climbers</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Leg Raises</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Box Jumps</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Rowing Machine</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <script>
-                    const button = document.getElementById('dropdown-button');
-                    const menu = document.getElementById('dropdown-menu');
-                    const selectedOptionsContainer = document.getElementById('selected-options');
-                    const dropdownOptions = document.querySelectorAll('.dropdown-option');
-
-                    // Track selected options
-                    const selectedOptions = new Set();
-
-                    button.addEventListener('click', () => {
-                        menu.classList.toggle('hidden');
-                    });
-
-                    // Close the dropdown if clicked outside
-                    document.addEventListener('click', (e) => {
-                        if (!button.contains(e.target) && !menu.contains(e.target)) {
-                            menu.classList.add('hidden');
-                        }
-                    });
-
-                    // Handle option selection
-                    dropdownOptions.forEach(option => {
-                        option.addEventListener('click', (e) => {
-                            e.preventDefault();
-                            const optionText = option.textContent;
-                            
-                            if (!selectedOptions.has(optionText)) {
-                                // Add to selected options
-                                selectedOptions.add(optionText);
-                                
-                                // Create selected option element
-                                const selectedOption = document.createElement('div');
-                                selectedOption.className = 'inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-light text-gray-700 mr-2 mb-2';
-                                selectedOption.textContent = optionText;
-                                
-                                // Add remove button
-                                const removeBtn = document.createElement('button');
-                                removeBtn.className = 'ml-2 text-pink-500 hover:text-pink-700';
-                                removeBtn.innerHTML = '&times;';
-                                removeBtn.addEventListener('click', () => {
-                                    selectedOptions.delete(optionText);
-                                    selectedOption.remove();
-                                    // Add back to dropdown
-                                    option.classList.remove('hidden');
-                                });
-                                
-                                selectedOption.appendChild(removeBtn);
-                                selectedOptionsContainer.appendChild(selectedOption);
-                                
-                                // Hide from dropdown
-                                option.classList.add('hidden');
-                            }
-                            
-                            menu.classList.add('hidden');
-                        });
-                    });
-                </script>
-            </div>
+                <div class="font-extralight text-3xl text-neutral-500 py-14">
+                    Martes
+    
+                        <!-- Selected Options Container -->
+                        <div id="selected-options-martes" class="my-4 min-h-10 border border-dashed border-pink-500 rounded-lg p-4 text-2xl">
+                            <!-- Selected options will appear here -->List:
+                        </div>
+    
+                        <div class="p-10">
+                            <!-- Dropdown Container -->
+                            <div class="relative inline-block text-left self-center">
+                                <!-- Dropdown Button -->
+                                <button id="dropdown-button-martes" class="flex justify-center items-center text-pink-500 w-32 h-16 rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-light hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                    Agregar
+                                    <!-- Dropdown Icon -->
+                                    <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+    
+                                <!-- Dropdown Menu (Hidden by default) -->
+                                <div id="dropdown-menu-martes" class="hidden origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
+                                    <div class="py-1 max-h-60 overflow-y-auto" role="none">
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Squats</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Deadlifts</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Bench Press</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Pull-ups</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Push-ups</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Lunges</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Shoulder Press</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Bicep Curls</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Tricep Dips</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Lat Pulldowns</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Leg Press</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Calf Raises</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Plank</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Russian Twists</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Burpees</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Jumping Jacks</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Mountain Climbers</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Leg Raises</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Box Jumps</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Rowing Machine</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="font-extralight text-3xl text-neutral-500 py-14">
+                    Miércoles
+    
+                        <!-- Selected Options Container -->
+                        <div id="selected-options-miercoles" class="my-4 min-h-10 border border-dashed border-pink-500 rounded-lg p-4 text-2xl">
+                            <!-- Selected options will appear here -->List:
+                        </div>
+    
+                        <div class="p-10">
+                            <!-- Dropdown Container -->
+                            <div class="relative inline-block text-left self-center">
+                                <!-- Dropdown Button -->
+                                <button id="dropdown-button-miercoles" class="flex justify-center items-center text-pink-500 w-32 h-16 rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-light hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                    Agregar
+                                    <!-- Dropdown Icon -->
+                                    <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+    
+                                <!-- Dropdown Menu (Hidden by default) -->
+                                <div id="dropdown-menu-miercoles" class="hidden origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
+                                    <div class="py-1 max-h-60 overflow-y-auto" role="none">
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Squats</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Deadlifts</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Bench Press</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Pull-ups</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Push-ups</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Lunges</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Shoulder Press</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Bicep Curls</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Tricep Dips</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Lat Pulldowns</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Leg Press</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Calf Raises</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Plank</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Russian Twists</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Burpees</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Jumping Jacks</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Mountain Climbers</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Leg Raises</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Box Jumps</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Rowing Machine</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="font-extralight text-3xl text-neutral-500 py-14">
+                    Jueves
+    
+                        <!-- Selected Options Container -->
+                        <div id="selected-options-jueves" class="my-4 min-h-10 border border-dashed border-pink-500 rounded-lg p-4 text-2xl">
+                            <!-- Selected options will appear here -->List:
+                        </div>
+    
+                        <div class="p-10">
+                            <!-- Dropdown Container -->
+                            <div class="relative inline-block text-left self-center">
+                                <!-- Dropdown Button -->
+                                <button id="dropdown-button-jueves" class="flex justify-center items-center text-pink-500 w-32 h-16 rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-light hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                    Agregar
+                                    <!-- Dropdown Icon -->
+                                    <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+    
+                                <!-- Dropdown Menu (Hidden by default) -->
+                                <div id="dropdown-menu-jueves" class="hidden origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
+                                    <div class="py-1 max-h-60 overflow-y-auto" role="none">
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Squats</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Deadlifts</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Bench Press</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Pull-ups</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Push-ups</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Lunges</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Shoulder Press</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Bicep Curls</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Tricep Dips</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Lat Pulldowns</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Leg Press</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Calf Raises</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Plank</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Russian Twists</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Burpees</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Jumping Jacks</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Mountain Climbers</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Leg Raises</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Box Jumps</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Rowing Machine</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="font-extralight text-3xl text-neutral-500 py-14">
+                    Viernes
+    
+                        <!-- Selected Options Container -->
+                        <div id="selected-options-viernes" class="my-4 min-h-10 border border-dashed border-pink-500 rounded-lg p-4 text-2xl">
+                            <!-- Selected options will appear here -->List:
+                        </div>
+    
+                        <div class="p-10">
+                            <!-- Dropdown Container -->
+                            <div class="relative inline-block text-left self-center">
+                                <!-- Dropdown Button -->
+                                <button id="dropdown-button-viernes" class="flex justify-center items-center text-pink-500 w-32 h-16 rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-light hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                    Agregar
+                                    <!-- Dropdown Icon -->
+                                    <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+    
+                                <!-- Dropdown Menu (Hidden by default) -->
+                                <div id="dropdown-menu-viernes" class="hidden origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
+                                    <div class="py-1 max-h-60 overflow-y-auto" role="none">
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Squats</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Deadlifts</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Bench Press</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Pull-ups</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Push-ups</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Lunges</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Shoulder Press</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Bicep Curls</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Tricep Dips</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Lat Pulldowns</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Leg Press</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Calf Raises</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Plank</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Russian Twists</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Burpees</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Jumping Jacks</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Mountain Climbers</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Leg Raises</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Box Jumps</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Rowing Machine</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="font-extralight text-3xl text-neutral-500 py-14">
+                    Sábado
+    
+                        <!-- Selected Options Container -->
+                        <div id="selected-options-sabado" class="my-4 min-h-10 border border-dashed border-pink-500 rounded-lg p-4 text-2xl">
+                            <!-- Selected options will appear here -->List:
+                        </div>
+    
+                        <div class="p-10">
+                            <!-- Dropdown Container -->
+                            <div class="relative inline-block text-left self-center">
+                                <!-- Dropdown Button -->
+                                <button id="dropdown-button-sabado" class="flex justify-center items-center text-pink-500 w-32 h-16 rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-light hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                    Agregar
+                                    <!-- Dropdown Icon -->
+                                    <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+    
+                                <!-- Dropdown Menu (Hidden by default) -->
+                                <div id="dropdown-menu-sabado" class="hidden origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
+                                    <div class="py-1 max-h-60 overflow-y-auto" role="none">
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Squats</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Deadlifts</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Bench Press</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Pull-ups</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Push-ups</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Lunges</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Shoulder Press</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Bicep Curls</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Tricep Dips</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Lat Pulldowns</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Leg Press</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Calf Raises</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Plank</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Russian Twists</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Burpees</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Jumping Jacks</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Mountain Climbers</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Leg Raises</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Box Jumps</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Rowing Machine</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="font-extralight text-3xl text-neutral-500 py-14">
+                    Domingo
+    
+                        <!-- Selected Options Container -->
+                        <div id="selected-options-domingo" class="my-4 min-h-10 border border-dashed border-pink-500 rounded-lg p-4 text-2xl">
+                            <!-- Selected options will appear here -->List:
+                        </div>
+    
+                        <div class="p-10">
+                            <!-- Dropdown Container -->
+                            <div class="relative inline-block text-left self-center">
+                                <!-- Dropdown Button -->
+                                <button id="dropdown-button-domingo" class="flex justify-center items-center text-pink-500 w-32 h-16 rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-light hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                    Agregar
+                                    <!-- Dropdown Icon -->
+                                    <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+    
+                                <!-- Dropdown Menu (Hidden by default) -->
+                                <div id="dropdown-menu-domingo" class="hidden origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
+                                    <div class="py-1 max-h-60 overflow-y-auto" role="none">
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Squats</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Deadlifts</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Bench Press</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Pull-ups</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Push-ups</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Lunges</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Shoulder Press</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Bicep Curls</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Tricep Dips</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Lat Pulldowns</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Leg Press</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Calf Raises</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Plank</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Russian Twists</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Burpees</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Jumping Jacks</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Mountain Climbers</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Leg Raises</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Box Jumps</button>
+                                        <button class="dropdown-option block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Rowing Machine</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </section>
-    </section>
+        <button class="flex items-center justify-center font-light bg-pink-500 text-white p-10 w-42 h-14 rounded-xl mb-20 text-lg hover:cursor-pointer hover:bg-pink-500 hover:text-neutral-700">SAVE</button>
+</section>
 
-{% endblock %} 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to handle dropdown functionality
+    function setupDropdown(buttonId, menuId, containerId) {
+        const dropdownButton = document.getElementById(buttonId);
+        const dropdownMenu = document.getElementById(menuId);
+        const selectedOptionsContainer = document.getElementById(containerId);
+        const selectedOptions = new Set(); // To track selected options and avoid duplicates
+
+        // Toggle dropdown menu
+        dropdownButton.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent event from bubbling up
+            dropdownMenu.classList.toggle('hidden');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function() {
+            dropdownMenu.classList.add('hidden');
+        });
+
+        // Handle option selection
+        dropdownMenu.addEventListener('click', function(e) {
+            const option = e.target.closest('.dropdown-option');
+            if (option) {
+                e.preventDefault();
+                const exercise = option.textContent;
+                
+                // Check if exercise is already selected
+                if (!selectedOptions.has(exercise)) {
+                    selectedOptions.add(exercise);
+                    
+                    // Create a new selected option element
+                    const selectedOption = document.createElement('div');
+                    selectedOption.className = 'selected-option flex justify-between items-center bg-gray-100 rounded px-3 py-2 mb-2';
+                    selectedOption.innerHTML = `
+                        <span>${exercise}</span>
+                        <button class="remove-option text-red-500 hover:text-red-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    `;
+                    
+                    // Add to container
+                    selectedOptionsContainer.appendChild(selectedOption);
+                    
+                    // Handle removal of selected option
+                    const removeBtn = selectedOption.querySelector('.remove-option');
+                    removeBtn.addEventListener('click', function() {
+                        selectedOptions.delete(exercise);
+                        selectedOption.remove();
+                    });
+                }
+                
+                // Close the dropdown
+                dropdownMenu.classList.add('hidden');
+            }
+        });
+
+        // Prevent dropdown from closing when clicking inside it
+        dropdownMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+
+    // Initialize both dropdowns
+    setupDropdown('dropdown-button-lunes', 'dropdown-menu-lunes', 'selected-options-lunes');
+    setupDropdown('dropdown-button-martes', 'dropdown-menu-martes', 'selected-options-martes');
+    setupDropdown('dropdown-button-miercoles', 'dropdown-menu-miercoles', 'selected-options-miercoles');
+    setupDropdown('dropdown-button-jueves', 'dropdown-menu-jueves', 'selected-options-jueves');
+    setupDropdown('dropdown-button-viernes', 'dropdown-menu-viernes', 'selected-options-viernes');
+    setupDropdown('dropdown-button-sabado', 'dropdown-menu-sabado', 'selected-options-sabado');
+    setupDropdown('dropdown-button-domingo', 'dropdown-menu-domingo', 'selected-options-domingo');
+});
+</script>
+{% endblock %}
