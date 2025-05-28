@@ -12,25 +12,28 @@
         {% comment %} <div class="bg-gradient-to-br from-gray-800 to-gray-600/40 text-neutral-800 inset-0 w-full h-screen absolute -z-10 "> {% endcomment %}
             {% comment %} <img class="fitness-index bg-cover" src="{% static 'media/bb.jpg' %}" alt="Fitness Index"> {% endcomment %}
         {% comment %} </div> {% endcomment %}
-        <div class="w-full grid grid-cols-9 gap-x-4 px-7">
-            <div class="bg-[linear-gradient(145deg,_rgba(14,100,200,0.40)_0%,_rgba(100,89,78,0.2)_80%)] text-neutral-800 border-2 border-white flex flex-row justify-center items-center p-5 rounded-3xl my-10 col-span-2">
+        <div class="w-full grid grid-cols-9 gap-x-4 px-7 my-1">
+            <div class="bg-[linear-gradient(145deg,_rgba(14,100,200,0.40)_0%,_rgba(100,89,78,0.2)_80%)] text-neutral-800  shadow shadow-white border-white flex flex-row justify-center items-center p-5 rounded-3xl my-10 col-span-2">
                 {% if social_account.get_avatar_url %}
                     <img class="rounded-full m-1 w-12 hover:cursor-pointer hover:opacity-90" src="{{ social_account.get_avatar_url }}" alt="Profile photo">
                 {% else %}
                     <img class="rounded-full m-1 w-12 hover:cursor-pointer hover:opacity-90" src="{% static 'media/user.jpg' %}" alt="Profile photo">
                 {% endif %}
                 <span class='bg-white h-10 w-[1px] mx-3'></span>
-                <p class="font-extralight text-white">Sabrina del Valle</p>
+                <div>
+                    <p class="font-extralight text-white text-base">Hola,</p>
+                    <p class="font-light text-white">- Sabrina del Valle</p>
+                </div>
             </div>
-            <div class="bg-[linear-gradient(145deg,_rgba(14,100,200,0.40)_0%,_rgba(100,89,78,0.2)_80%)] border-2 border-white flex flex-row gap-10 justify-center items-center p-5 rounded-3xl my-10 col-span-7">
-                <p class="font-extralight text-white">Data Metrics:</p>
+            <div class="bg-[linear-gradient(145deg,_rgba(14,100,200,0.40)_0%,_rgba(100,89,78,0.2)_80%)] border-white shadow shadow-white flex flex-row gap-10 justify-center items-center p-5 rounded-3xl my-10 col-span-7">
+                <p class="font-light text-white">Data Metrics:</p>
                 <span class='bg-white h-18 w-[1px]'></span>
-                <p class="font-extralight text-white">PPM: 80</p>
-                <p class="font-extralight text-white">ID: 782740210381</p>
-                <p class="font-extralight text-white">DAY: may 15</p> 
+                <p class="font-light text-white">PPM: 80</p>
+                <p class="font-light text-white">ID: 782740210381</p>
+                <p class="font-light text-white">DAY: may 15</p> 
             </div>
         </div>
-        <section class="flex flex-row bg-stone-200/20 border-2 border-white rounded-4xl">
+        <section class="flex flex-row bg-stone-200/20 border-white rounded-4xl border-[1px] shadow shadow-white ">
                 <div class="flex flex-col justify-center gap-2 items-center bg-[linear-gradient(145deg,_rgba(14,100,200,0.40)_0%,_rgba(100,89,78,0.2)_80%)] w-20 rounded-3xl col-span-1 my-16 ml-10 h-80">
                     <!-- Buttons -->
                     <button class="bg-gradient-to-br from-gray-200 to-gray-50 shadow rounded-2xl w-14 h-14 flex items-center justify-center hover:bg-gray-200 hover:w-16 hover:h-16 hover:cursor-pointer transition"><svg class="hover:scale-110" width="56px" height="56px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="4.032"></g><g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#616161" stroke-width="0.768" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
@@ -39,8 +42,8 @@
                     <button class="bg-gradient-to-br from-gray-200 to-gray-50 shadow rounded-2xl w-14 h-14 opacity-100 flex items-center justify-center hover:bg-gray-200 hover:w-16 hover:h-16 hover:cursor-pointer transition"><svg class="hover:scale-110" width="50px" height="50px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000000" stroke="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>ionicons-v5-q</title><path d="M262.29,192.31a64,64,0,1,0,57.4,57.4A64.13,64.13,0,0,0,262.29,192.31ZM416.39,256a154.34,154.34,0,0,1-1.53,20.79l45.21,35.46A10.81,10.81,0,0,1,462.52,326l-42.77,74a10.81,10.81,0,0,1-13.14,4.59l-44.9-18.08a16.11,16.11,0,0,0-15.17,1.75A164.48,164.48,0,0,1,325,400.8a15.94,15.94,0,0,0-8.82,12.14l-6.73,47.89A11.08,11.08,0,0,1,298.77,470H213.23a11.11,11.11,0,0,1-10.69-8.87l-6.72-47.82a16.07,16.07,0,0,0-9-12.22,155.3,155.3,0,0,1-21.46-12.57,16,16,0,0,0-15.11-1.71l-44.89,18.07a10.81,10.81,0,0,1-13.14-4.58l-42.77-74a10.8,10.8,0,0,1,2.45-13.75l38.21-30a16.05,16.05,0,0,0,6-14.08c-.36-4.17-.58-8.33-.58-12.5s.21-8.27.58-12.35a16,16,0,0,0-6.07-13.94l-38.19-30A10.81,10.81,0,0,1,49.48,186l42.77-74a10.81,10.81,0,0,1,13.14-4.59l44.9,18.08a16.11,16.11,0,0,0,15.17-1.75A164.48,164.48,0,0,1,187,111.2a15.94,15.94,0,0,0,8.82-12.14l6.73-47.89A11.08,11.08,0,0,1,213.23,42h85.54a11.11,11.11,0,0,1,10.69,8.87l6.72,47.82a16.07,16.07,0,0,0,9,12.22,155.3,155.3,0,0,1,21.46,12.57,16,16,0,0,0,15.11,1.71l44.89-18.07a10.81,10.81,0,0,1,13.14,4.58l42.77,74a10.8,10.8,0,0,1-2.45,13.75l-38.21,30a16.05,16.05,0,0,0-6.05,14.08C416.17,247.67,416.39,251.83,416.39,256Z" style="fill:none;stroke:#696969;stroke-linecap:round;stroke-linejoin:round;stroke-width:20px"></path></g></svg></button>
                 </div>
     <section class="grid grid-cols-3 gap-x-10 gap-y-5 mb-14 p-12 rounded-2xl col-span-2">
-                <div class="flex flex-col items-center font-extralight text-3xl text-white py-14 bg-[linear-gradient(145deg,_rgba(14,100,200,0.40)_0%,_rgba(100,89,78,0.2)_80%)] p-5 m-3 rounded-3xl opacity-95">
-                    <h1 class="font mb-8">Lunes</h1>
+                <div class="flex flex-col items-center font-extralight text-3xl shadow shadow-white text-white py-14 bg-[linear-gradient(145deg,_rgba(14,100,200,0.40)_0%,_rgba(100,89,78,0.2)_80%)] p-5 m-3 rounded-3xl opacity-95">
+                    <h1 class="font mb-8 font-light text-4xl">Lunes</h1>
                     <span class='bg-white h-[1px] w-full mb-7'></span>
                     
                     <!-- Selected Options Container -->
@@ -134,8 +137,8 @@
                         </div>
                     </div>
                 </template>
-                <div class="flex flex-col items-center font-extralight text-3xl text-neutral-600 py-14 bg-gradient-to-br from-stone-300/50 to-gray-200 p-5 m-3 rounded-3xl">
-                    <h1 class="font mb-8">Martes</h1>
+                <div class="flex flex-col items-center font-extralight text-3xl shadow shadow-gray-800 text-neutral-600 py-14 bg-gradient-to-br from-stone-300/50 to-gray-200 p-5 m-3 rounded-3xl">
+                    <h1 class="font mb-8 font-extralight text-4xl">Martes</h1>
                         <span class='bg-neutral-600 h-[1px] w-full mb-7'></span>
                         <!-- Selected Options Container -->
                         <div id="selected-options-martes" class="w-full my-4 min-h-10 p-4 text-2xl">
@@ -183,8 +186,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-col items-center font-extralight text-3xl text-white py-14 bg-[linear-gradient(145deg,_rgba(14,100,200,0.40)_0%,_rgba(100,89,78,0.2)_80%)] p-5 m-3 rounded-3xl opacity-95">
-                    <h1 class="font mb-8">Miércoles</h1>
+                <div class="flex flex-col items-center font-extralight text-3xl text-white shadow shadow-white py-14 bg-[linear-gradient(145deg,_rgba(14,100,200,0.40)_0%,_rgba(100,89,78,0.2)_80%)] p-5 m-3 rounded-3xl opacity-95">
+                    <h1 class="font mb-8 font-light text-4xl">Miércoles</h1>
                     <span class='bg-white h-[1px] w-full mb-7'></span>
                     
                     <!-- Selected Options Container -->
@@ -233,8 +236,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-col items-center font-extralight text-3xl text-neutral-600 py-14 bg-gradient-to-br from-stone-300/50 to-gray-200 p-5 m-3 rounded-3xl">
-                    <h1 class="font mb-8">Jueves</h1>
+                <div class="flex flex-col items-center font-extralight text-3xl shadow shadow-gray-800 text-neutral-600 py-14 bg-gradient-to-br from-stone-300/50 to-gray-200 p-5 m-3 rounded-3xl">
+                    <h1 class="font mb-8 font-extralight text-4xl">Jueves</h1>
                         <span class='bg-neutral-600 h-[1px] w-full mb-7'></span>
                         <!-- Selected Options Container -->
                         <div id="selected-options-jueves" class="w-full my-4 min-h-10 p-4 text-2xl">
@@ -282,8 +285,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-col items-center font-extralight text-3xl text-white py-14 bg-[linear-gradient(145deg,_rgba(14,100,200,0.40)_0%,_rgba(100,89,78,0.2)_80%)] p-5 m-3 rounded-3xl opacity-95">
-                    <h1 class="font mb-8">Viernes</h1>
+                <div class="flex flex-col items-center font-extralight text-3xl text-white shadow shadow-white py-14 bg-[linear-gradient(145deg,_rgba(14,100,200,0.40)_0%,_rgba(100,89,78,0.2)_80%)] p-5 m-3 rounded-3xl opacity-95">
+                    <h1 class="font mb-8 font-light text-4xl">Viernes</h1>
                     <span class='bg-white h-[1px] w-full mb-7'></span>
                     
                     <!-- Selected Options Container -->
@@ -332,8 +335,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-col items-center font-extralight text-3xl text-neutral-600 py-14 bg-gradient-to-br from-stone-300/50 to-gray-200 p-5 m-3 rounded-3xl">
-                    <h1 class="font mb-8">Sábado</h1>
+                <div class="flex flex-col items-center font-extralight text-3xl shadow shadow-gray-800 text-neutral-600 py-14 bg-gradient-to-br from-stone-300/50 to-gray-200 p-5 m-3 rounded-3xl">
+                    <h1 class="font mb-8 font-extralight text-4xl">Sábado</h1>
                         <span class='bg-neutral-600 h-[1px] w-full mb-7'></span>
                         <!-- Selected Options Container -->
                         <div id="selected-options-sabado" class="w-full my-4 min-h-10 p-4 text-2xl">
@@ -381,8 +384,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-col items-center font-extralight text-3xl text-white py-14 bg-[linear-gradient(145deg,_rgba(14,100,200,0.40)_0%,_rgba(100,89,78,0.2)_80%)] p-5 m-3 rounded-3xl opacity-95">
-                    <h1 class="font mb-8">Domingo</h1>
+                <div class="flex flex-col items-center font-extralight text-3xl text-white shadow shadow-white py-14 bg-[linear-gradient(145deg,_rgba(14,100,200,0.40)_0%,_rgba(100,89,78,0.2)_80%)] p-5 m-3 rounded-3xl opacity-95">
+                    <h1 class="font mb-8 font-light text-4xl">Domingo</h1>
                     <span class='bg-white h-[1px] w-full mb-7'></span>
                     
                     <!-- Selected Options Container -->
