@@ -8,40 +8,40 @@
 
 {% block content %}
 <section class="flex justify-center items-center">
-    <section class="bg-stone-800/95 grid justify-center items-center w-full mt-[1px] pb-50 ">
-        <section class="bg-[linear-gradient(145deg,_rgba(60,100,200,0.55)_0%,_rgba(87,89,78,0.4)_80%)] w-full flex border-[1px] border-white flex-col items-center justify-center relative mt-7 rounded-4xl shadow">
+    <section class="bg-gray-100 grid justify-center items-center w-full mt-[1px] pb-50 ">
+        <div class="w-full flex flex-row items-start justify-center gap-4 my-10 px-13">
+            <div class="bg-slate-800 border-white shadow shadow-white text-neutral-800 flex flex-row justify-start items-center p-8 rounded-4xl w-2/4 ">
+                {% if social_account.get_avatar_url %}
+                    <img class="rounded-full m-1 w-12 hover:cursor-pointer hover:opacity-90 border-2 border-red-300" src="{{ social_account.get_avatar_url }}" alt="Profile photo">
+                {% else %}
+                    <img class="rounded-full m-1 w-12 hover:cursor-pointer hover:opacity-90" src="{% static 'media/user.jpg' %}" alt="Profile photo">
+                {% endif %}
+                <span class='bg-white h-10 w-[2px] mx-3'></span>
+                <div>
+                    <p class="font-extralight text-white text-base">Hola!</p>
+                    <p class="font-light text-white text-sm">Sabrina del Valle</p>
+                </div>
+            </div>
+            <div class="bg-slate-800 border-white shadow shadow-white text-sm flex flex-row gap-10 justify-center items-center p-6 px-12 rounded-4xl w-full">
+                <p class="font-light text-white">Metrics:</p>
+                <span class='bg-white h-18 w-[1px]'></span>
+                <p class="font-light text-white">PPM: 80</p>
+                <p class="font-light text-white">ID: 782740210381</p>
+                <p class="font-light text-white text-sm">DATE: May/15th</p> 
+            </div>
+        </div>
+        <section class="w-full flex flex-col items-center justify-center relative">
             {% comment %} <div class="bg-gradient-to-br from-gray-800 to-gray-600/40 text-neutral-800 inset-0 w-full h-screen absolute -z-10 "> {% endcomment %}
                 {% comment %} <img class="fitness-index bg-cover" src="{% static 'media/bb.jpg' %}" alt="Fitness Index"> {% endcomment %}
             {% comment %} </div> {% endcomment %}
-            <div class="w-10/11 flex flex-row items-center justify-center gap-4 mt-8 mb-10">
-                <div class="bg-[rgba(14,100,200,0.20)] border-white shadow shadow-white text-neutral-800 flex flex-row justify-start items-center p-6 rounded-3xl w-2/4 ">
-                    {% if social_account.get_avatar_url %}
-                        <img class="rounded-full m-1 w-12 hover:cursor-pointer hover:opacity-90 border-2 border-red-300" src="{{ social_account.get_avatar_url }}" alt="Profile photo">
-                    {% else %}
-                        <img class="rounded-full m-1 w-12 hover:cursor-pointer hover:opacity-90" src="{% static 'media/user.jpg' %}" alt="Profile photo">
-                    {% endif %}
-                    <span class='bg-white h-10 w-[2px] mx-3'></span>
-                    <div>
-                        <p class="font-extralight text-white text-base">Hola!</p>
-                        <p class="font-light text-white text-sm">Sabrina del Valle</p>
-                    </div>
-                </div>
-                <div class="bg-[linear-gradient(145deg,_rgba(14,100,200,0.40)_0%,_rgba(100,89,78,0.2)_80%)] border-white shadow shadow-white text-sm flex flex-row gap-10 justify-center items-center p-4 px-12 rounded-3xl w-full">
-                    <p class="font-light text-white">Metrics:</p>
-                    <span class='bg-white h-18 w-[1px]'></span>
-                    <p class="font-light text-white">PPM: 80</p>
-                    <p class="font-light text-white">ID: 782740210381</p>
-                    <p class="font-light text-white text-sm">DATE: May/15th</p> 
-                </div>
-            </div>
             {% comment %} <span class='bg-white w-4/8 mb-2 opacity-30'></span> {% endcomment %}
-            <section class="w-11/12 flex flex-row justify-center bg-stone-200/20 border-white rounded-4xl border-[1px] shadow shadow-white ">
-                <div class="flex flex-col justify-center gap-2 items-center bg-[linear-gradient(145deg,_rgba(14,100,200,0.40)_0%,_rgba(100,89,78,0.2)_80%)] shadow shadow-white w-17 rounded-3xl col-span-1 my-36 ml-8 h-62">
+            <section class="w-11/12 flex flex-row justify-center bg-slate-800 border-white rounded-4xl border-[1px] shadow shadow-white">
+                <div class="bg-neutral-200 flex flex-col justify-center gap-2 items-center shadow shadow-white w-17 rounded-3xl col-span-1 my-32 ml-8 h-62">
                     <!-- Buttons -->
-                    <button class="bg-gradient-to-br from-gray-200 to-gray-50 shadow rounded-2xl w-11 h-11 flex items-center justify-center hover:bg-gray-200 hover:scale-110 hover:cursor-pointer transition"><svg class="" width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="4.032"></g><g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#616161" stroke-width="0.768" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
-                    <button class="bg-gradient-to-br from-gray-200 to-gray-50 shadow rounded-2xl w-11 h-11 flex items-center justify-center opacity-100 hover:bg-gray-200 hover:scale-110 hover:cursor-pointer transition"><svg class="" version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 32 32" xml:space="preserve" fill="#000000" stroke="#000000" stroke-width="0.00032"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .feather_een{fill:#454545;} </style> <path class="feather_een" d="M12,15.5c0-0.276,0.224-0.5,0.5-0.5H13c0.552,0,1,0.448,1,1v6.5c0,0.276-0.224,0.5-0.5,0.5 S13,22.776,13,22.5V16h-0.5C12.224,16,12,15.776,12,15.5z M17.5,16H18v6.5c0,0.276,0.224,0.5,0.5,0.5s0.5-0.224,0.5-0.5V16 c0-0.552-0.448-1-1-1h-0.5c-0.276,0-0.5,0.224-0.5,0.5C17,15.776,17.224,16,17.5,16z M30,8v19c0,1.657-1.343,3-3,3H5 c-1.657,0-3-1.343-3-3V8c0-1.657,1.343-3,3-3h1V4c0-1.105,0.895-2,2-2c1.105,0,2,0.895,2,2v1h12V4c0-1.105,0.895-2,2-2 c1.105,0,2,0.895,2,2v1h1C28.657,5,30,6.343,30,8z M23,7c0,0.551,0.449,1,1,1s1-0.449,1-1V4c0-0.551-0.449-1-1-1s-1,0.449-1,1V7z M7,7c0,0.551,0.449,1,1,1s1-0.449,1-1V4c0-0.551-0.449-1-1-1S7,3.449,7,4V7z M28.976,27.242C28.447,27.708,27.76,28,27,28H5 c-0.76,0-1.447-0.292-1.976-0.758C3.145,28.229,3.98,29,5,29h22C28.02,29,28.855,28.229,28.976,27.242z M29,12H3v13 c0,1.103,0.897,2,2,2h22c1.103,0,2-0.897,2-2V12z M29,8c0-1.103-0.897-2-2-2h-1v1c0,1.105-0.895,2-2,2c-1.105,0-2-0.895-2-2V6H10v1 c0,1.105-0.895,2-2,2C6.895,9,6,8.105,6,7V6H5C3.897,6,3,6.897,3,8v3h26V8z"></path> </g></svg></button>
-                    <button class="bg-gradient-to-br from-gray-200 to-gray-50 shadow rounded-2xl w-11 h-11 flex items-center justify-center opacity-100 hover:bg-gray-200 hover:scale-110 hover:cursor-pointer transition"><svg class="" fill="#000000" height="30px" width="30px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" stroke="#000000" stroke-width="0.00512"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <g> <path d="M194.021,436.547H204.8c16.345,0,29.642-13.298,29.642-29.642V29.642C234.442,13.298,221.145,0,204.8,0h-10.779 c-16.345,0-29.642,13.298-29.642,29.642v377.263C164.379,423.25,177.677,436.547,194.021,436.547z M180.547,29.642 c0-7.43,6.044-13.474,13.474-13.474H204.8c7.43,0,13.474,6.044,13.474,13.474v377.263c0,7.43-6.044,13.474-13.474,13.474h-10.779 c-7.43,0-13.474-6.044-13.474-13.474V29.642z"></path> <path d="M406.905,436.547h10.779c16.345,0,29.642-13.298,29.642-29.642V83.537c0-16.344-13.297-29.642-29.642-29.642h-10.779 c-16.344,0-29.642,13.298-29.642,29.642v323.368C377.263,423.25,390.561,436.547,406.905,436.547z M393.431,83.537 c0-7.43,6.044-13.474,13.474-13.474h10.779c7.43,0,13.474,6.044,13.474,13.474v323.368c0,7.43-6.044,13.474-13.474,13.474 h-10.779c-7.43,0-13.474-6.044-13.474-13.474V83.537z"></path> <path d="M509.632,476.642l-21.558-21.558c-3.156-3.156-8.275-3.156-11.432,0c-3.157,3.157-3.157,8.275,0,11.433l7.758,7.757H51.2 c-7.43,0-13.474-6.044-13.474-13.474V27.602l7.758,7.758c3.156,3.156,8.275,3.156,11.432,0c3.157-3.157,3.157-8.275,0-11.433 L35.358,2.368c-3.156-3.156-8.275-3.156-11.432,0L2.368,23.926c-3.157,3.157-3.157,8.275,0,11.433 c3.156,3.156,8.275,3.156,11.432,0l7.758-7.758V460.8c0,16.344,13.298,29.642,29.642,29.643h433.199l-7.758,7.757 c-3.157,3.157-3.157,8.275,0,11.433c1.578,1.578,3.648,2.367,5.716,2.367s4.138-0.789,5.716-2.367l21.558-21.558 C512.79,484.917,512.79,479.799,509.632,476.642z"></path> <path d="M317.979,436.547h10.779c16.345,0,29.642-13.298,29.642-29.642V245.221c0-16.344-13.297-29.642-29.642-29.642h-10.779 c-16.345,0-29.642,13.298-29.642,29.642v161.684C288.337,423.25,301.635,436.547,317.979,436.547z M304.505,245.221 c0-7.43,6.044-13.474,13.474-13.474h10.779c7.43,0,13.474,6.044,13.474,13.474v161.684c0,7.43-6.044,13.474-13.474,13.474 h-10.779c-7.43,0-13.474-6.044-13.474-13.474V245.221z"></path> <path d="M105.094,436.547h10.779c16.345,0,29.642-13.298,29.642-29.642V180.547c0-16.344-13.297-29.642-29.642-29.642h-10.779 c-16.344,0-29.642,13.298-29.642,29.642v226.358C75.452,423.25,88.75,436.547,105.094,436.547z M91.621,180.547 c0-7.43,6.044-13.474,13.474-13.474h10.779c7.43,0,13.474,6.044,13.474,13.474v226.358c0,7.43-6.044,13.474-13.474,13.474 h-10.779c-7.43,0-13.474-6.044-13.474-13.474V180.547z"></path> </g> </g> </g> </g></svg></button>
-                    <button class="bg-gradient-to-br from-gray-200 to-gray-50 shadow rounded-2xl w-11 h-11 opacity-100 flex items-center justify-center hover:bg-gray-200 hover:scale-110 hover:cursor-pointer transition"><svg class="" width="37px" height="37px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000000" stroke="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>ionicons-v5-q</title><path d="M262.29,192.31a64,64,0,1,0,57.4,57.4A64.13,64.13,0,0,0,262.29,192.31ZM416.39,256a154.34,154.34,0,0,1-1.53,20.79l45.21,35.46A10.81,10.81,0,0,1,462.52,326l-42.77,74a10.81,10.81,0,0,1-13.14,4.59l-44.9-18.08a16.11,16.11,0,0,0-15.17,1.75A164.48,164.48,0,0,1,325,400.8a15.94,15.94,0,0,0-8.82,12.14l-6.73,47.89A11.08,11.08,0,0,1,298.77,470H213.23a11.11,11.11,0,0,1-10.69-8.87l-6.72-47.82a16.07,16.07,0,0,0-9-12.22,155.3,155.3,0,0,1-21.46-12.57,16,16,0,0,0-15.11-1.71l-44.89,18.07a10.81,10.81,0,0,1-13.14-4.58l-42.77-74a10.8,10.8,0,0,1,2.45-13.75l38.21-30a16.05,16.05,0,0,0,6-14.08c-.36-4.17-.58-8.33-.58-12.5s.21-8.27.58-12.35a16,16,0,0,0-6.07-13.94l-38.19-30A10.81,10.81,0,0,1,49.48,186l42.77-74a10.81,10.81,0,0,1,13.14-4.59l44.9,18.08a16.11,16.11,0,0,0,15.17-1.75A164.48,164.48,0,0,1,187,111.2a15.94,15.94,0,0,0,8.82-12.14l6.73-47.89A11.08,11.08,0,0,1,213.23,42h85.54a11.11,11.11,0,0,1,10.69,8.87l6.72,47.82a16.07,16.07,0,0,0,9,12.22,155.3,155.3,0,0,1,21.46,12.57,16,16,0,0,0,15.11,1.71l44.89-18.07a10.81,10.81,0,0,1,13.14,4.58l42.77,74a10.8,10.8,0,0,1-2.45,13.75l-38.21,30a16.05,16.05,0,0,0-6.05,14.08C416.17,247.67,416.39,251.83,416.39,256Z" style="fill:none;stroke:#696969;stroke-linecap:round;stroke-linejoin:round;stroke-width:20px"></path></g></svg></button>
+                    <button class="bg-gradient-to-br from-gray-100 to-gray-50 shadow rounded-2xl w-11 h-11 flex items-center justify-center hover:bg-gray-200 hover:scale-110 hover:cursor-pointer transition"><svg class="" width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="4.032"></g><g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#616161" stroke-width="0.768" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
+                    <button class="bg-gradient-to-br from-gray-100 to-gray-50 shadow rounded-2xl w-11 h-11 flex items-center justify-center opacity-100 hover:bg-gray-200 hover:scale-110 hover:cursor-pointer transition"><svg class="" version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 32 32" xml:space="preserve" fill="#000000" stroke="#000000" stroke-width="0.00032"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .feather_een{fill:#454545;} </style> <path class="feather_een" d="M12,15.5c0-0.276,0.224-0.5,0.5-0.5H13c0.552,0,1,0.448,1,1v6.5c0,0.276-0.224,0.5-0.5,0.5 S13,22.776,13,22.5V16h-0.5C12.224,16,12,15.776,12,15.5z M17.5,16H18v6.5c0,0.276,0.224,0.5,0.5,0.5s0.5-0.224,0.5-0.5V16 c0-0.552-0.448-1-1-1h-0.5c-0.276,0-0.5,0.224-0.5,0.5C17,15.776,17.224,16,17.5,16z M30,8v19c0,1.657-1.343,3-3,3H5 c-1.657,0-3-1.343-3-3V8c0-1.657,1.343-3,3-3h1V4c0-1.105,0.895-2,2-2c1.105,0,2,0.895,2,2v1h12V4c0-1.105,0.895-2,2-2 c1.105,0,2,0.895,2,2v1h1C28.657,5,30,6.343,30,8z M23,7c0,0.551,0.449,1,1,1s1-0.449,1-1V4c0-0.551-0.449-1-1-1s-1,0.449-1,1V7z M7,7c0,0.551,0.449,1,1,1s1-0.449,1-1V4c0-0.551-0.449-1-1-1S7,3.449,7,4V7z M28.976,27.242C28.447,27.708,27.76,28,27,28H5 c-0.76,0-1.447-0.292-1.976-0.758C3.145,28.229,3.98,29,5,29h22C28.02,29,28.855,28.229,28.976,27.242z M29,12H3v13 c0,1.103,0.897,2,2,2h22c1.103,0,2-0.897,2-2V12z M29,8c0-1.103-0.897-2-2-2h-1v1c0,1.105-0.895,2-2,2c-1.105,0-2-0.895-2-2V6H10v1 c0,1.105-0.895,2-2,2C6.895,9,6,8.105,6,7V6H5C3.897,6,3,6.897,3,8v3h26V8z"></path> </g></svg></button>
+                    <button class="bg-gradient-to-br from-gray-100 to-gray-50 shadow rounded-2xl w-11 h-11 flex items-center justify-center opacity-100 hover:bg-gray-200 hover:scale-110 hover:cursor-pointer transition"><svg class="" fill="#000000" height="30px" width="30px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" stroke="#000000" stroke-width="0.00512"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <g> <path d="M194.021,436.547H204.8c16.345,0,29.642-13.298,29.642-29.642V29.642C234.442,13.298,221.145,0,204.8,0h-10.779 c-16.345,0-29.642,13.298-29.642,29.642v377.263C164.379,423.25,177.677,436.547,194.021,436.547z M180.547,29.642 c0-7.43,6.044-13.474,13.474-13.474H204.8c7.43,0,13.474,6.044,13.474,13.474v377.263c0,7.43-6.044,13.474-13.474,13.474h-10.779 c-7.43,0-13.474-6.044-13.474-13.474V29.642z"></path> <path d="M406.905,436.547h10.779c16.345,0,29.642-13.298,29.642-29.642V83.537c0-16.344-13.297-29.642-29.642-29.642h-10.779 c-16.344,0-29.642,13.298-29.642,29.642v323.368C377.263,423.25,390.561,436.547,406.905,436.547z M393.431,83.537 c0-7.43,6.044-13.474,13.474-13.474h10.779c7.43,0,13.474,6.044,13.474,13.474v323.368c0,7.43-6.044,13.474-13.474,13.474 h-10.779c-7.43,0-13.474-6.044-13.474-13.474V83.537z"></path> <path d="M509.632,476.642l-21.558-21.558c-3.156-3.156-8.275-3.156-11.432,0c-3.157,3.157-3.157,8.275,0,11.433l7.758,7.757H51.2 c-7.43,0-13.474-6.044-13.474-13.474V27.602l7.758,7.758c3.156,3.156,8.275,3.156,11.432,0c3.157-3.157,3.157-8.275,0-11.433 L35.358,2.368c-3.156-3.156-8.275-3.156-11.432,0L2.368,23.926c-3.157,3.157-3.157,8.275,0,11.433 c3.156,3.156,8.275,3.156,11.432,0l7.758-7.758V460.8c0,16.344,13.298,29.642,29.642,29.643h433.199l-7.758,7.757 c-3.157,3.157-3.157,8.275,0,11.433c1.578,1.578,3.648,2.367,5.716,2.367s4.138-0.789,5.716-2.367l21.558-21.558 C512.79,484.917,512.79,479.799,509.632,476.642z"></path> <path d="M317.979,436.547h10.779c16.345,0,29.642-13.298,29.642-29.642V245.221c0-16.344-13.297-29.642-29.642-29.642h-10.779 c-16.345,0-29.642,13.298-29.642,29.642v161.684C288.337,423.25,301.635,436.547,317.979,436.547z M304.505,245.221 c0-7.43,6.044-13.474,13.474-13.474h10.779c7.43,0,13.474,6.044,13.474,13.474v161.684c0,7.43-6.044,13.474-13.474,13.474 h-10.779c-7.43,0-13.474-6.044-13.474-13.474V245.221z"></path> <path d="M105.094,436.547h10.779c16.345,0,29.642-13.298,29.642-29.642V180.547c0-16.344-13.297-29.642-29.642-29.642h-10.779 c-16.344,0-29.642,13.298-29.642,29.642v226.358C75.452,423.25,88.75,436.547,105.094,436.547z M91.621,180.547 c0-7.43,6.044-13.474,13.474-13.474h10.779c7.43,0,13.474,6.044,13.474,13.474v226.358c0,7.43-6.044,13.474-13.474,13.474 h-10.779c-7.43,0-13.474-6.044-13.474-13.474V180.547z"></path> </g> </g> </g> </g></svg></button>
+                    <button class="bg-gradient-to-br from-gray-100 to-gray-50 shadow rounded-2xl w-11 h-11 opacity-100 flex items-center justify-center hover:bg-gray-200 hover:scale-110 hover:cursor-pointer transition"><svg class="" width="37px" height="37px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000000" stroke="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>ionicons-v5-q</title><path d="M262.29,192.31a64,64,0,1,0,57.4,57.4A64.13,64.13,0,0,0,262.29,192.31ZM416.39,256a154.34,154.34,0,0,1-1.53,20.79l45.21,35.46A10.81,10.81,0,0,1,462.52,326l-42.77,74a10.81,10.81,0,0,1-13.14,4.59l-44.9-18.08a16.11,16.11,0,0,0-15.17,1.75A164.48,164.48,0,0,1,325,400.8a15.94,15.94,0,0,0-8.82,12.14l-6.73,47.89A11.08,11.08,0,0,1,298.77,470H213.23a11.11,11.11,0,0,1-10.69-8.87l-6.72-47.82a16.07,16.07,0,0,0-9-12.22,155.3,155.3,0,0,1-21.46-12.57,16,16,0,0,0-15.11-1.71l-44.89,18.07a10.81,10.81,0,0,1-13.14-4.58l-42.77-74a10.8,10.8,0,0,1,2.45-13.75l38.21-30a16.05,16.05,0,0,0,6-14.08c-.36-4.17-.58-8.33-.58-12.5s.21-8.27.58-12.35a16,16,0,0,0-6.07-13.94l-38.19-30A10.81,10.81,0,0,1,49.48,186l42.77-74a10.81,10.81,0,0,1,13.14-4.59l44.9,18.08a16.11,16.11,0,0,0,15.17-1.75A164.48,164.48,0,0,1,187,111.2a15.94,15.94,0,0,0,8.82-12.14l6.73-47.89A11.08,11.08,0,0,1,213.23,42h85.54a11.11,11.11,0,0,1,10.69,8.87l6.72,47.82a16.07,16.07,0,0,0,9,12.22,155.3,155.3,0,0,1,21.46,12.57,16,16,0,0,0,15.11,1.71l44.89-18.07a10.81,10.81,0,0,1,13.14,4.58l42.77,74a10.8,10.8,0,0,1-2.45,13.75l-38.21,30a16.05,16.05,0,0,0-6.05,14.08C416.17,247.67,416.39,251.83,416.39,256Z" style="fill:none;stroke:#696969;stroke-linecap:round;stroke-linejoin:round;stroke-width:20px"></path></g></svg></button>
                 </div>
                 <div>
                     <section class="grid grid-cols-3 justify-center items-center content-center gap-x-12 gap-y-8 mb-14 w-full py-8 px-10 rounded-2xl col-span-2">
@@ -88,9 +88,9 @@
                             </div>
                         </div>
                     </template>
-                    <h1 class="text-white col-span-3 font-extralight text-4xl flex items-center justify-center py-3 underline underline-offset-4">Calendario</h1>
+                    <h1 class="text-white col-span-3 font-extralight text-3xl flex items-center justify-center py-2">Calendario</h1>
                             <!-- Days -->
-                    <div class="flex flex-col items-center font-extralight w-68 text-xl shadow shadow-white text-white py-8 bg-[linear-gradient(145deg,_rgba(14,100,200,0.4)_0%,_rgba(100,89,78,0.2)_80%)] p-3 m-2 rounded-4xl opacity-95">
+                    <div class="flex flex-col items-center font-extralight w-68 text-xl shadow shadow-white text-white py-11 p-3 m-2 rounded-4xl opacity-95">
                         <h1 class="mb-4 font-light text-2xl">Lunes</h1>
                         <span class='bg-white h-px w-full mb-4'></span>
                         
@@ -100,7 +100,7 @@
 
                         <div class="p-4">
                             <div class="relative inline-block text-left self-center">
-                                <button id="dropdown-button-lunes" class="flex justify-center items-center text-neutral-500 w-24 h-12 rounded-md border border-gray-300 shadow-sm px-3 py-1 bg-neutral-200 text-xs font-light hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                <button id="dropdown-button-lunes" class="flex justify-center items-center text-neutral-500 w-24 h-12 rounded-md border border-gray-300 shadow-sm px-3 my-3 bg-neutral-200 text-xs font-light hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                     Agregar
                                     <svg class="-mr-1 ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -135,7 +135,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex flex-col items-center font-extralight w-68 text-xl shadow shadow-gray-800 text-neutral-600 py-8 bg-gradient-to-br from-stone-300/80 to-gray-200 p-3 m-2 rounded-4xl">
+                    <div class="flex flex-col items-center font-extralight w-68 text-xl shadow shadow-gray-800 text-neutral-600 py-11 bg-neutral-300 p-3 m-2 rounded-4xl">
                         <h1 class="mb-4 font-extralight text-2xl">Martes</h1>
                         <span class='bg-neutral-600 h-px w-full mb-4'></span>
                         
@@ -145,7 +145,7 @@
 
                         <div class="p-4">
                             <div class="relative inline-block text-left self-center">
-                                <button id="dropdown-button-martes" class="flex justify-center items-center text-neutral-500 w-24 h-12 rounded-md border border-gray-300 shadow-sm px-3 py-1 bg-neutral-200 text-xs font-light hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                <button id="dropdown-button-martes" class="flex justify-center items-center text-neutral-500 w-24 h-12 rounded-md border border-gray-300 shadow-sm px-3 my-3 py-1 bg-neutral-200 text-xs font-light hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                     Agregar
                                     <svg class="-mr-1 ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -180,7 +180,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex flex-col items-center font-extralight w-68 text-xl shadow shadow-white text-white py-8 bg-[linear-gradient(145deg,_rgba(14,100,200,0.4)_0%,_rgba(100,89,78,0.2)_80%)] p-3 m-2 rounded-4xl opacity-95">
+                    <div class="flex flex-col items-center font-extralight w-68 text-xl shadow shadow-white text-white py-11 p-3 m-2 rounded-4xl opacity-95">
                         <h1 class="mb-4 font-light text-2xl">Miércoles</h1>
                         <span class='bg-white h-px w-full mb-4'></span>
                         
@@ -190,7 +190,7 @@
 
                         <div class="p-4">
                             <div class="relative inline-block text-left self-center">
-                                <button id="dropdown-button-miercoles" class="flex justify-center items-center text-neutral-500 w-24 h-12 rounded-md border border-gray-300 shadow-sm px-3 py-1 bg-neutral-200 text-xs font-light hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                <button id="dropdown-button-miercoles" class="flex justify-center items-center text-neutral-500 w-24 h-12 rounded-md border border-gray-300 shadow-sm px-3 my-3 py-1 bg-neutral-200 text-xs font-light hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                     Agregar
                                     <svg class="-mr-1 ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -225,7 +225,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex flex-col items-center font-extralight w-68 text-xl shadow shadow-gray-800 text-neutral-600 py-8 bg-gradient-to-br from-stone-300/80 to-gray-200 p-3 m-2 rounded-4xl">
+                    <div class="flex flex-col items-center font-extralight w-68 text-xl shadow shadow-gray-800 text-neutral-600 py-11 bg-neutral-300 to-gray-200 p-3 m-2 rounded-4xl">
                         <h1 class="mb-4 font-extralight text-2xl">Jueves</h1>
                         <span class='bg-neutral-600 h-px w-full mb-4'></span>
                         
@@ -235,7 +235,7 @@
 
                         <div class="p-4">
                             <div class="relative inline-block text-left self-center">
-                                <button id="dropdown-button-jueves" class="flex justify-center items-center text-neutral-500 w-24 h-12 rounded-md border border-gray-300 shadow-sm px-3 py-1 bg-neutral-200 text-xs font-light hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                <button id="dropdown-button-jueves" class="flex justify-center items-center text-neutral-500 w-24 h-12 rounded-md border border-gray-300 shadow-sm px-3 my-3 py-1 bg-neutral-200 text-xs font-light hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                     Agregar
                                     <svg class="-mr-1 ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -270,7 +270,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex flex-col items-center font-extralight w-68 text-xl shadow shadow-white text-white py-8 bg-[linear-gradient(145deg,_rgba(14,100,200,0.4)_0%,_rgba(100,89,78,0.2)_80%)] p-3 m-2 rounded-4xl opacity-95">
+                    <div class="flex flex-col items-center font-extralight w-68 text-xl shadow shadow-white text-white py-11 p-3 m-2 rounded-4xl opacity-95">
                         <h1 class="mb-4 font-light text-2xl">Viernes</h1>
                         <span class='bg-white h-px w-full mb-4'></span>
                         
@@ -280,7 +280,7 @@
 
                         <div class="p-4">
                             <div class="relative inline-block text-left self-center">
-                                <button id="dropdown-button-viernes" class="flex justify-center items-center text-neutral-500 w-24 h-12 rounded-md border border-gray-300 shadow-sm px-3 py-1 bg-neutral-200 text-xs font-light hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                <button id="dropdown-button-viernes" class="flex justify-center items-center text-neutral-500 w-24 h-12 rounded-md border border-gray-300 shadow-sm px-3 my-3 py-1 bg-neutral-200 text-xs font-light hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                     Agregar
                                     <svg class="-mr-1 ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -315,7 +315,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex flex-col items-center font-extralight w-68 text-xl shadow shadow-gray-800 text-neutral-600 py-8 bg-gradient-to-br from-stone-300/80 to-gray-200 p-3 m-2 rounded-4xl">
+                    <div class="flex flex-col items-center font-extralight w-68 text-xl shadow shadow-gray-800 text-neutral-600 py-11 bg-neutral-300 to-gray-200 p-3 m-2 rounded-4xl">
                         <h1 class="mb-4 font-extralight text-2xl">Sábado</h1>
                         <span class='bg-neutral-600 h-px w-full mb-4'></span>
                         
@@ -325,7 +325,7 @@
 
                         <div class="p-4">
                             <div class="relative inline-block text-left self-center">
-                                <button id="dropdown-button-sabado" class="flex justify-center items-center text-neutral-500 w-24 h-12 rounded-md border border-gray-300 shadow-sm px-3 py-1 bg-neutral-200 text-xs font-light hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                <button id="dropdown-button-sabado" class="flex justify-center items-center text-neutral-500 w-24 h-12 rounded-md border border-gray-300 shadow-sm px-3 my-3 py-1 bg-neutral-200 text-xs font-light hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                     Agregar
                                     <svg class="-mr-1 ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -360,7 +360,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex flex-col items-center font-extralight w-68 text-xl shadow shadow-white text-white py-8 bg-[linear-gradient(145deg,_rgba(14,100,200,0.4)_0%,_rgba(100,89,78,0.2)_80%)] p-3 m-2 rounded-4xl opacity-95">
+                    <div class="flex flex-col items-center font-extralight w-68 text-xl shadow shadow-white text-white py-11 p-3 m-2 rounded-4xl opacity-95">
                         <h1 class="mb-4 font-light text-2xl">Domingo</h1>
                         <span class='bg-white h-px w-full mb-4'></span>
                         
@@ -370,7 +370,7 @@
 
                         <div class="p-4">
                             <div class="relative inline-block text-left self-center">
-                                <button id="dropdown-button-domingo" class="flex justify-center items-center text-neutral-500 w-24 h-12 rounded-md border border-gray-300 shadow-sm px-3 py-1 bg-neutral-200 text-xs font-light hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                <button id="dropdown-button-domingo" class="flex justify-center items-center text-neutral-500 w-24 h-12 rounded-md border border-gray-300 shadow-sm px-3 my-3 py-1 bg-neutral-200 text-xs font-light hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                     Agregar
                                     <svg class="-mr-1 ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
