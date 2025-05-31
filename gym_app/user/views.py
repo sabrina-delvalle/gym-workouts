@@ -4,6 +4,9 @@ from .models import User
 from django.contrib.auth import authenticate, login  # UserCreationForm
 from django.contrib import messages  # logout
 from . import forms
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
 
 # from django.contrib.auth import login
 
@@ -65,3 +68,57 @@ def login_view(request):
             messages.error(request, "Invalid username or password.")
 
     return render(request, "user/login.html")
+
+
+@csrf_exempt  # Remove in production and use proper CSRF protection
+@login_required
+def save_workout(request):
+    if request.method == "POST":
+        try:
+            data = json.loads(request.body)
+            print("Received workout data:", data)
+
+            # Get the user object (assuming your User model has
+            # a selection field) #flake8
+            user = request.user
+
+            # Update the selection field
+            user.selection = data
+            user.save()
+
+            return JsonResponse({"status": "success"})
+
+        except Exception as e:
+            return JsonResponse(
+                {"status": "error", "message": str(e)}, status=400
+            )  # flake8
+
+    return JsonResponse(
+        {"status": "error", "message": "Invalid request"}, status=400
+    )  # flake8
+
+
+@csrf_exempt  # Remove in production
+@login_required
+def delete_workout(request):
+    if request.method == "POST":
+        try:
+            # Get the authenticated user
+            user = request.user
+
+            # Clear the selection field
+            user.selection = {}  # Or set to None if your field allows it
+            user.save()
+
+            return JsonResponse(
+                {"status": "success", "message": "Workout data cleared"}
+            )
+
+        except Exception as e:
+            return JsonResponse(
+                {"status": "error", "message": str(e)}, status=400
+            )  # flake8
+
+    return JsonResponse(
+        {"status": "error", "message": "Invalid request"}, status=400
+    )  # flake8
