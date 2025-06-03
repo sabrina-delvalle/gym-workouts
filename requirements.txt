@@ -8,6 +8,7 @@ dill==0.4.0
 Django==5.2.1
 django-allauth==65.8.0
 django-widget-tweaks==1.5.0
+gunicorn==22.0.0
 idna==3.10
 isort==6.0.1
 mccabe==0.7.0
