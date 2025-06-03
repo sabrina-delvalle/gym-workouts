@@ -1,11 +1,11 @@
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .models import User
 from django.contrib.auth import authenticate, login  # UserCreationForm
 from django.contrib import messages  # logout
-from . import forms
-from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from .models import User
+from . import forms
 import json
 
 # from django.contrib.auth import login
