@@ -10,7 +10,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch:css": "npx @tailwindcss/cli -i ./gym_app/static/src/styles.css -o ./gym_app/static/dist/styles.css --watch"
+    "watch:css": "npx @tailwindcss/cli -i ./gym_app/static/src/styles.css -o ./gym_app/static/dist/styles.css --watch",
+    "build": "npx tailwindcss -i ./gym_app/static/src/styles.css -o ./gym_app/static/dist/styles.css --minify"
   },
   "repository": {
     "type": "git",
